@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js?202408141037"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
         </script>
     <script src="/php_practice/JS/question3.js" defer></script>
