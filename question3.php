@@ -5,12 +5,12 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js?202408141037"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
         </script>
-    <script src="/php_practice/JS/question3.js" defer></script>
-    <link rel="stylesheet" href="/php_practice/CSS/question3.css">
+    <script src="./JS/question3.js" defer></script>
+    <link rel="stylesheet" href="./CSS/index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>華氏攝氏換算</title>
+    <title>統一發票對獎</title>
 </head>
 
 <body>
@@ -73,13 +73,12 @@
             </tboby>
     </table>
     <hr>
-    <font>請輸入獎號</font>
-    <form>
-<input type="text" pattern="\d{8}" required>
-    <input type="text" pattern="\d*" id="input" maxlength="8">
-    <input type="submit" id="submit" value="送出">
-    <input type="text" id="celsius" maxlength="4">
-</form>
+    <table border = "1">
+        <tr>
+            <td>請輸入發票號碼：<input type="text" id="input" maxlength="8"></td>
+        </tr>
+
+    </table>
 </body>
 
 </html>
