@@ -24,11 +24,7 @@ $('#input').on("input", function () {
             $("#input").val("");
         }
         else {
-            if (value === "11111111") {
-                $(this).after("<tr><td>發票號碼：" + value + "，中獎了</td></tr>");
-                $("#input").val("");
-            }
-            if(true){
+            if (value === "12345678") {
                 $(this).after("<tr><td>發票號碼：" + value + "，中獎了</td></tr>");
                 $("#input").val("");
             }
