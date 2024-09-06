@@ -6,8 +6,4 @@ $('#input').change(function () {
         //$(this).after("<tr><td>請輸入 '阿拉伯數字'</td></tr>");
         $("#input").val("");
     }
-
-    $("#year").text("2999");
-    $("#howMuchDay").text("3XX");
-    $("#YN").text("N");
 });
