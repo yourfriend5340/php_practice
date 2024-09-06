@@ -71,7 +71,9 @@ button {
     border-radius: 15%;
 }
 
-
+.red_font {
+    color: red;
+}
 
 th,
 tr,
@@ -95,4 +97,9 @@ tbody>tr:nth-of-type(even) {
 iframe {
     height: 100%;
     width: 100%;
+}
+
+.question3>tbody tr td {
+    width: 100vw;
+    border-color: white;
 }

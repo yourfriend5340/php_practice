@@ -68,16 +68,20 @@
                 <td colspan="2">同期統一發票收執聯末3位數號碼與頭獎中獎號碼末3位相同者，各得獎金 2 佰元</td>
             </tr>
             <tr>
-                <td colspan="3" class="td_center">領獎期間自 113 年 08 月 06日 起至 113年 11 月 05 日止</td>
+                <td colspan="3" class="td_center">
+                    領獎期間自 113 年 08 月 06日 起至 113年 11 月 05 日止<br>
+                    <font class="red_font">☆故意選過號碼，一個一個字key in特獎號，會同時有中六獎的狀況☆</font>
+                </td>
             </tr>
             </tboby>
     </table>
     <hr>
-    <table border = "1">
-        <tr>
-            <td>請輸入發票號碼：<input type="text" id="input" maxlength="8"></td>
-        </tr>
-
+    <table class="question3">
+        <tbody>
+            <tr>
+                <td>請輸入發票號碼：<input type="text" id="input" maxlength="8"></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 
