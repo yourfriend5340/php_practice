@@ -83,7 +83,7 @@ td {
 
 table {
     border-collapse: collapse;
-    border: 3px solid, #3c3f41;
+    border: 2px solid, #3c3f41;
 }
 
 thead {
@@ -102,4 +102,43 @@ iframe {
 .question3>tbody tr td {
     width: 100vw;
     border-color: white;
+}
+
+table.question47Input {
+    border: none;
+}
+
+table.question47Input td {
+    border: 1px solid;
+    border-color: white;
+}
+
+table.qustion47SubTable td {
+    border: 1px solid;
+    border-color: white;
+}
+
+table.qustion47SubTable,
+tbody>tr:nth-last-of-type(even) {
+    background-color: white;
+}
+
+table.qustion47Sub2Table {
+    border: none;
+}
+
+table.qustion47Sub2Table tr {
+    border: none;
+}
+
+table.qustion47Sub2Table td {
+    border: none;
+}
+
+.alignEnd {
+    text-align: end;
+}
+
+.alignStart {
+    text-align: start;
 }
