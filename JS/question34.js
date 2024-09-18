@@ -5,6 +5,8 @@ $('#input').change(function () {
     if (!ticket.test(value)) {
         //$(this).after("<tr><td>請輸入 '阿拉伯數字'</td></tr>");
         $("#input").val("");
+        $("#popup").text("請輸入數字，如0~9");
+        return false;
     }
 
     var level1_price = 0;

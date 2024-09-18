@@ -55,7 +55,9 @@
     <table class="question3">
         <tbody>
             <tr>
-                <td>請輸入電話使用時數：<input type="text" id="input" maxlength="8"></td>
+                <td>請輸入電話使用時數：<input type="text" id="input" maxlength="8">
+                <label id="popup"></label>
+                </td>
             </tr>
         </tbody>
     </table>
