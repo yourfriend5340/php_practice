@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js?202408141037"
          integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
@@ -13,55 +13,13 @@
 </head>
 <body>
     <span>支票簿大小寫轉換器</span>
-    <table class='question47Maintable'>
-        <thead>
-            <tr>
-                <td>輸出階層 / 餘數</td>
-                <td>1</td>
-                <td>2</td>
-                <td>0</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>0</td>
-                <td>0/1</td>
-                <td>0/2</td>
-                <td>0/0</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1/1</td>
-                <td>1/2</td>
-                <td>1/0</td>
-            </tr>
-                <tr>
-                <td>2</td>
-                <td>2/1</td>
-                <td>2/2</td>
-                <td>2/0</td>
-            </tr>
-            <tr>
-                <td>…</td>
-                <td>…/1</td>
-                <td>…/2</td>
-                <td>…/0</td>
-            </tr>
-
-            </tboby>
-    </table>
-
-    <font> 程式判斷邏輯為：</font>
-    <font>ex：因每一列有三格，想輸出1~6的乘法表，印4時(即要輸出的第4個數字，非指4本身值)的位置輸出位置為：
-        4除以3，得到餘為1，在餘為1的狀況時，會印出一個tr標籤做換行 
-        </font>
     <hr>
-    <form class="form1" action="question47.php" method="GET">
+    <form class="form1" action="question29.php" method="GET">
     <table class="question29Input">
         <tbody>
             <tr>
                 <td>請輸入想顯示的數字：
-                    <input type="text" name="29input" id="29input"  placeholder="ex：1,2,3,4~7">
+                    <input type="text" name="29input" id="29input"  placeholder="ex：1~9999999">
                     <input type="submit" value="輸入">
                     <label id="popup"></label>
                 </td>
@@ -71,98 +29,57 @@
     </form>
 
     <?php
-    $tempArr=[];
     if(isset($_GET['29input']))
     {
-        $getstr = $_GET['29input'];
-    
-        //字串處理，以逗號判斷，切開字串存入array
-        $inputArr=explode(",",$getstr);
-
-        //處理碰到符號 " ~ "時，補回所需的字串
-        for ($i=0;$i<count($inputArr);$i++)
-        {
-            $check = strpos($inputArr[$i],'~');
-            //無帶有~號的字串，存入array
-            if($check === false)
-            {
-                //resultArr為處理完的字串陣列
-                array_push ($tempArr,$inputArr[$i]);
-            }
-            //帶有~號的字串，補回中間省略字串
-            else
-            {
-                $temp2Arr = explode('~',$inputArr[$i]);
-                if($temp2Arr[1] > $temp2Arr[0])
-                {
-                    $counter = $temp2Arr[1] - $temp2Arr[0];
-                    $smallest = $temp2Arr[0];
-                }
-                else
-                {
-                    $counter = $temp2Arr[0]-$temp2Arr[1];
-                    $smallest = $temp2Arr[1];
-                }
-                for($j=0;$j<=$counter;$j++)
-                {
-                    array_push($tempArr, ($smallest + $j)); 
-                }
-            }
-        } 
+        $tempArr = array(   
+                    '1'=>'壹',
+                    '2'=>'貳',
+                    '3'=>'參',
+                    '4'=>'肆',
+                    '5'=>'伍',
+                    '6'=>'陸',
+                    '7'=>'染',
+                    '8'=>'捌',
+                    '9'=>'玖',
+                    '0'=>'零'
+                );
+        $tempArr2 = str_split($_GET['29input']);
+        $counter = count($tempArr2);
         
-        //將處理完的字串做sort後，儲存字串處理結果
-        sort($tempArr);
-        $inputNumArr = $tempArr;
-        //$inputNumArr = [1,2,3,4,5,6,7,8,9];
-        
-        $Arr_count = count($inputNumArr);
+        $degreeArr = array(
+                    0 =>'拾',
+                    1 =>'百',
+                    2 =>'仟',
+                    3 =>'萬',
+                    4 =>'十',
+                    5 =>'百'
+        );
+        $index = 0;
+        $str = '';
+        //字串切割後，從後面讀回來
+        for($i=$counter-1;$i>=0;$i--){
+            $str .= $tempArr[$tempArr2[$i]];
 
-        echo "<table class='question47SubTable'>
-                <thead>
-                    <tr>
-                        <td colspan='3'>九九乘法 output</td>
-                    </tr>
-                </thead>
-                <tbody>";
-        for ($i=1;$i<=$Arr_count;$i++)
-        {
-            $quo = $i / 3;//quotient商數，quo簡寫
-            $rem = $i % 3;//remainder餘數，rem採簡寫        
-            
-            if($rem == 1)
-            {
-                echo "<tr>";
-            }
-            
-            echo "<td><table class='qustion47Sub2Table'><tdoby>";
-            for($j=1;$j<=9;$j++)
+            //若下一位數有值，補上單位
+            if(isset($tempArr2[$i-1]))
             {   
-                echo "<tr>
-                        <td class='alignStart'>".$inputNumArr[$i-1]." X ".$j."</td>".
-                        "<td class='alignStart'> &nbsp; = &nbsp; </td>".
-                        "<td class='alignEnd'>".$inputNumArr[$i-1] * $j."</td>
-                    </tr>";
-            }
-            echo "</tbody></table></td>";
-
-            //在最後一次$i迴圈時，計算空白處要補多少td
-            if($i==$Arr_count){
-                //例如，有16個數字，%3之後可得1。3-1=2，知道要補2個td
-                $needtd = 3 -($Arr_count % 3);
-                for($z=1;$z<=$needtd;$z++)
+                if($tempArr[$tempArr2[$i-1]] !== '零')
                 {
-                    echo "<td></td>";
+                    $str .= $degreeArr[$index];
                 }
+                
+                $index++;
             }
-            if($rem == 0)
-            {
-                echo "</tr>";
-            }
-
         }
-        echo "</tdoby></table>";
+        //strrev會亂碼，用其他方式輸出, 改用切割成array，反轉array後再輸出
+        $strArr = array_reverse(mb_str_split($str));
+        $counter = count($strArr);
+        for ($i=0;$i<$counter;$i++){
+            echo ($strArr[$i]);
+        }
+        echo '元';
+
     }
-    
 ?>
 
 </body>

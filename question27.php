@@ -21,6 +21,7 @@
                         請輸入一個年份(1~3000)：
                         <input type="text" id="input" name="input" maxlength="8">
                         <input type="submit" value="輸入">
+                        <lable id="popup"></lable>
                     </td>
                 </tr>
             </tbody>
@@ -33,85 +34,89 @@
 if(isset($_GET['input']))
 {
     $year = $_GET['input'];
+    if($year <= 3000 && $year >= 1)
+    {
+            if ($year % 400 == 0)
+            {
+                $result = true;  //閏年
+            }
+            else if ($year%100 == 0)
+            {
+                $result = false; //平年
+            }
+            else if ($year%4 == 0)
+            {
+                $result = true;  //閏年
+            }
+            else
+            {
+                $result = false; //平年
+            }
+            
+            if($result == true)
+            {
+                $day = 366;
+                $YN = "是";
+            }
+            else
+            {
+                $day = 365;
+                $YN = "否";
+            }
+            echo "<table border='1'>
+                    <thead>
+                        <tr><td>方法一</td></tr>
+                        <tr>
+                            <td>你輸入的年份</td>
+                            <td>該年天數</td>
+                            <td>是否閏年</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>".$year."</td>
+                        <td>
+                            <font class='red_font'>".$day."天</font>
+                        </td>
+                        <td>".$YN."</td>
+                    </tr>
+                    </tboby>
+            </table>";
 
-    if ($year % 400 == 0)
-    {
-        $result = true;  //閏年
-    }
-    else if ($year%100 == 0)
-    {
-        $result = false; //平年
-    }
-    else if ($year%4 == 0)
-    {
-        $result = true;  //閏年
-    }
-    else
-    {
-        $result = false; //平年
-    }
-    
-    if($result == true)
-    {
-        $day = 366;
-        $YN = "是";
-    }
-    else
-    {
-        $day = 365;
-        $YN = "否";
-    }
-    echo "<table border='1'>
-            <thead>
-                <tr><td>方法一</td></tr>
-                <tr>
-                    <td>你輸入的年份</td>
-                    <td>該年天數</td>
-                    <td>是否閏年</td>
-                </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>".$year."</td>
-                <td>
-                    <font class='red_font'>".$day."天</font>
-                </td>
-                <td>".$YN."</td>
-            </tr>
-            </tboby>
-    </table>";
 
-
-    $lastDay = strtotime($year.'-12-31');
-    $firstDay = strtotime($year.'-01-01');
-    $day2 = floor(($lastDay-$firstDay) / (60*60*24))+1;
-    if($day ==366)
-    {
-        $YN = "是";
+            $lastDay = strtotime($year.'-12-31');
+            $firstDay = strtotime($year.'-01-01');
+            $day2 = floor(($lastDay-$firstDay) / (60*60*24))+1;
+            if($day ==366)
+            {
+                $YN = "是";
+            }
+            else
+            {
+                $YN = "否";
+            }
+                echo "<table border='1'>
+                    <thead>
+                        <tr><td>方法二</td></tr>
+                        <tr>
+                            <td>你輸入的年份</td>
+                            <td>該年天數</td>
+                            <td>是否閏年</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>".$year."</td>
+                        <td>
+                            <font class='red_font'>".$day2."天</font>
+                        </td>
+                        <td>".$YN."</td>
+                    </tr>
+                    </tboby>
+            </table>";
     }
-    else
-    {
-        $YN = "否";
+    else {
+        echo "你輸入的值不是1~3000";
     }
-        echo "<table border='1'>
-            <thead>
-                <tr><td>方法二</td></tr>
-                <tr>
-                    <td>你輸入的年份</td>
-                    <td>該年天數</td>
-                    <td>是否閏年</td>
-                </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>".$year."</td>
-                <td>
-                    <font class='red_font'>".$day2."天</font>
-                </td>
-                <td>".$YN."</td>
-            </tr>
-            </tboby>
-    </table>";
 }
-
 ?>

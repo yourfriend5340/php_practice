@@ -1,5 +1,5 @@
 
-$('#input').on("input", function () {
+$('#input').change(function () {
     var value = $(this).val();
 
     //定義中獎號碼
