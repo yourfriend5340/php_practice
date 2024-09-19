@@ -1,11 +1,14 @@
 $("#celTofah").click(function () {
     var cel = $("#celsius").val();
 
-    var degree = new RegExp('[0-9]$')
+    var degree = new RegExp('^[0-9]+$')
     if (!degree.test(cel)) {
-        //$(this).after("<tr><td>請輸入 '阿拉伯數字'</td></tr>");
-        $("#celTofah").val("");
-
+        $("#celsius").val("");
+        $("#pupup").text("請輸入數字");
+        return false;
+    }
+    else {
+        $("#pupup").text("");
     }
 
     if (cel === '') {
@@ -21,11 +24,16 @@ $("#celTofah").click(function () {
 $("#fahTocel").click(function () {
     var fah = $("#fahrenheit").val();
 
-    var degree = new RegExp('[0-9]$')
+    //因為是字串的關係，所以要加跳脫，建議好記的話，還是用例如：let str = /^\d+$/
+    var degree = new RegExp('^\\d+$')
     if (!degree.test(fah)) {
-        //$(this).after("<tr><td>請輸入 '阿拉伯數字'</td></tr>");
-        $("#fahTocel").val("");
 
+        $("#fahrenheit").val("");
+        $("#pupup").text("請輸入數字");
+        return false;
+    }
+    else {
+        $("#pupup").text("");
     }
 
     if (fah === '') {

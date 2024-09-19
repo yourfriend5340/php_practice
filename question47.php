@@ -75,7 +75,8 @@
     if(isset($_GET['47input']))
     {
         $getstr = $_GET['47input'];
-    
+        $getstr = rtrim($getstr,',');
+        $getstr = rtrim($getstr,'~');
         //字串處理，以逗號判斷，切開字串存入array
         $inputArr=explode(",",$getstr);
 

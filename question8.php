@@ -20,15 +20,16 @@
             <td><font>請輸入攝氏度：</font></td>
         </tr>
         <tr>
-            <td><input type = "number" id = "fahrenheit" maxlength = "8"></td>
+            <td><input type = "text" id = "fahrenheit" maxlength = "8"></td>
             <td>
                 <button id = "celTofah"> ← </button>
                 <button id = "fahTocel"> → </button>
             </td>
             <td>
-                <input type = "number" id = "celsius" maxlength = "8">
+                <input type = "text" id = "celsius" maxlength = "8">
             </td>
         </tr>
-        </table>    
+        </table>
+        <lable id="pupup"></lable>    
 </body>
 </html>
