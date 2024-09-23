@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./JS/question8.js" defer></script>
+    <script src="./JS/question8.js?20240923" defer></script>
     <?php include "head.php"?>
     <title>華氏攝氏換算</title>
 </head>
@@ -24,6 +24,6 @@
             </td>
         </tr>
         </table>
-        <label id="pupup"></label>    
+        <span id="pupup"></span>
 </body>
 </html>

@@ -177,11 +177,11 @@ h6 {
 
 .indexTable {
     border-collapse: collapse;
-    border: 2px solid, rgb(60, 63, 65);
+    border: 2px solid rgb(60, 63, 65);
 }
 
 thead {
-    background-color: rgb(228 240 245);
+    background-color: rgb(228,240,245);
 }
 
 tbody>tr:nth-of-type(even) {

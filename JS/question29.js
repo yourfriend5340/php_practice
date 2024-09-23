@@ -1,3 +1,4 @@
+$(function() {
 $('#29input').keyup(function () {
     var value = $(this).val();
     let check = /^[1-9]{1}\d{0,6}$/;
@@ -11,3 +12,4 @@ $('#29input').keyup(function () {
         $("#popup").text("");
     }
 });
+})

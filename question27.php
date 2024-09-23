@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./JS/question27.js" defer></script>
+    <script src="./JS/question27.js?20240923" defer></script>
     <?php include "head.php"?>
     <title>判斷閏年</title>
 </head>
@@ -13,7 +13,7 @@
                 <tr>
                     <td>
                         請輸入一個年份(1~3000)：
-                        <input type="text" id="input" name="input" maxlength="8">
+                        <input type="number" id="input" name="input" maxlength="4" min="1" max="3000" step="1">
                         <input type="submit" value="輸入">
                         <lable id="popup"></lable>
                     </td>
@@ -59,14 +59,14 @@ if(isset($_GET['input']))
             }
             echo "<br /><table>
                     <thead>
-                        <tr><td>方法一</td></tr>
+                        <tr><td colspan='3'>方法一</td></tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>你輸入的年份</td>
                             <td>該年天數</td>
                             <td>是否閏年</td>
                         </tr>
-                    </thead>
-                    <tbody>
                     <tr>
                         <td>".$year."</td>
                         <td>
@@ -91,14 +91,14 @@ if(isset($_GET['input']))
             }
                 echo "<table>
                     <thead>
-                        <tr><td>方法二</td></tr>
+                        <tr><td colspan='3'>方法二</td></tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>你輸入的年份</td>
                             <td>該年天數</td>
                             <td>是否閏年</td>
                         </tr>
-                    </thead>
-                    <tbody>
                     <tr>
                         <td>".$year."</td>
                         <td>

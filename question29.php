@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <script src="./JS/question29.js" defer></script>
+    <script src="./JS/question29.js?20240923" defer></script>
     <?php include "head.php"?>
     <title>支票簿大小寫轉換器</title>
 </head>
@@ -14,7 +14,7 @@
                 <td>請輸入想顯示的數字：
                     <input type="text" name="29input" id="29input"  placeholder="ex：1~9999999">
                     <input type="submit" value="輸入">
-                    <label id="popup"></label>
+                    <sapn id="popup"></sapn>
                 </td>
             </tr>
         </tbody>

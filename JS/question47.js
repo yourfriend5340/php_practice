@@ -1,3 +1,4 @@
+$(function() {
 $('#47input').keyup(function () {
     var value = $(this).val();
 
@@ -8,3 +9,5 @@ $('#47input').keyup(function () {
         $("#popup").text("請輸入範例中字元，如0~9或 '~' 或是 ','");
     }
 });
+
+})

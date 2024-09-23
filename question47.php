@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./JS/question47.js" defer></script>
+    <script src="./JS/question47.js?20240923" defer></script>
     <?php include "head.php"?>
     <title>九九乘法表</title>
 </head>
@@ -57,7 +57,7 @@
                 <td>請輸入想顯示的數字：
                     <input type="text" name="47input" id="47input"  placeholder="ex：1,2,3,4~7">
                     <input type="submit" value="輸入">
-                    <label id="popup"></label>
+                    <span id="popup"></span>
                 </td>
             </tr>
         </tbody>
@@ -81,7 +81,6 @@
             //無帶有~號的字串，存入array
             if($check === false)
             {
-                //resultArr為處理完的字串陣列
                 array_push ($tempArr,$inputArr[$i]);
             }
             //帶有~號的字串，補回中間省略字串

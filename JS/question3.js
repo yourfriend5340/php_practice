@@ -1,4 +1,4 @@
-
+$(function(){
 $('#input').keyup(function () {
     var value = $(this).val();
 
@@ -113,5 +113,6 @@ $('#input').keyup(function () {
 
     }
 
-
 });
+
+})

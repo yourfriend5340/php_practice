@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./JS/question34.js" defer></script>
+    <script src="./JS/question34.js?20240923" defer></script>
     <?php include "head.php"?>
     <title>電話費計算</title>
 </head>
@@ -50,7 +50,7 @@
         <tbody>
             <tr>
                 <td>請輸入電話使用時數：<input type="text" id="input" maxlength="8">
-                <label id="popup"></label>
+                <span id="popup"></span>
                 </td>
             </tr>
         </tbody>

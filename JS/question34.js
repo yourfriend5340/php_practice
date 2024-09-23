@@ -1,3 +1,4 @@
+$(function(){
 $('#input').change(function () {
     var value = $(this).val();
 
@@ -60,3 +61,5 @@ $('#input').change(function () {
         cleanFlag = 'N';
     }
 });
+
+})

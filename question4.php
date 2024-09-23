@@ -74,9 +74,6 @@
         <tbody>
             <tr>
                 <td>請輸入發票號碼：<input type="text" id="input" maxlength="8"></td>
-                <td>
-                    <a href="http://127.0.0.1/php_practice/question3.php/%22%3E%3Cscript%3Ealert(document.cookie);%3C/script%3E/">XSS</a>
-                </td>
             </tr>
         </tbody>
     </table>

@@ -1,3 +1,4 @@
+$(function() {
 $("#celTofah").click(function () {
     var cel = $("#celsius").val();
 
@@ -17,7 +18,8 @@ $("#celTofah").click(function () {
     }
     else {
         fah = (cel * 9 / 5) + 32;
-        $("#fahrenheit").replaceWith("<input type='text' id='fahrenheit' maxlength='8' value = " + fah.toFixed(2) + '>');
+        $("#fahrenheit").val(fah.toFixed(2));
+        //$("#fahrenheit").replaceWith("<input type='text' id='fahrenheit' maxlength='8' value = " + fah.toFixed(2) + '>');
     }
 });
 
@@ -42,6 +44,9 @@ $("#fahTocel").click(function () {
     }
     else {
         cel = (fah - 32) * 5 / 9;
-        $("#celsius").replaceWith("<input type='text' id='celsius' maxlength='8' value = " + cel.toFixed(2) + '>');
+        $("#celsius").val(cel.toFixed(2));
+        //$("#celsius").replaceWith("<input type='text' id='celsius' maxlength='8' value = " + cel.toFixed(2) + '>');
     }
 });
+
+})
