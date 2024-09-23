@@ -7,7 +7,7 @@
 </head>
 <body>
     <span>電話費計算</span>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <td>費率說明</td>
