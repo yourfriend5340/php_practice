@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js?202408141037"
-         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
-    </script>
     <script src="./JS/question27.js" defer></script>
-    <link rel="stylesheet" href="./CSS/index.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include "head.php"?>
     <title>判斷閏年</title>
 </head>
 <body>
     <span>判斷閏年</span>
-    <form class="form1" action="question27.php" method="GET">
+    <form class="form1" action="question27.php" method="GET" >
         <table class="question3">
             <tbody>
                 <tr>
@@ -63,7 +57,7 @@ if(isset($_GET['input']))
                 $day = 365;
                 $YN = "否";
             }
-            echo "<table border='1'>
+            echo "<br /><table>
                     <thead>
                         <tr><td>方法一</td></tr>
                         <tr>
@@ -76,12 +70,12 @@ if(isset($_GET['input']))
                     <tr>
                         <td>".$year."</td>
                         <td>
-                            <font class='red_font'>".$day."天</font>
+                            <font class='redFont'>".$day."天</font>
                         </td>
                         <td>".$YN."</td>
                     </tr>
                     </tboby>
-            </table>";
+            </table><br />";
 
 
             $lastDay = strtotime($year.'-12-31');
@@ -95,7 +89,7 @@ if(isset($_GET['input']))
             {
                 $YN = "否";
             }
-                echo "<table border='1'>
+                echo "<table>
                     <thead>
                         <tr><td>方法二</td></tr>
                         <tr>
@@ -108,7 +102,7 @@ if(isset($_GET['input']))
                     <tr>
                         <td>".$year."</td>
                         <td>
-                            <font class='red_font'>".$day2."天</font>
+                            <font class='redFont'>".$day2."天</font>
                         </td>
                         <td>".$YN."</td>
                     </tr>

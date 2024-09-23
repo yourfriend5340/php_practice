@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js?202408141037"
-         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
-    </script>
     <script src="./JS/question34.js" defer></script>
-    <link rel="stylesheet" href="./CSS/index.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include "head.php"?>
     <title>電話費計算</title>
 </head>
 <body>
@@ -25,21 +19,21 @@
             <tr>
                 <td>600分鐘以下，每分0.5元</td>
                 <td id="time1">
-                    <font class="red_font">使用時數</font>
+                    <font class="redFont">使用時數</font>
                 </td>
                 <td id="price1">xxx元</td>
             </tr>
             <tr>
                 <td>600~1200分鐘，以九折計算</td>
                 <td id="time2">
-                    <font class="red_font">使用時數</font>
+                    <font class="redFont">使用時數</font>
                 </td>
                 <td id="price2">xxx元</td>
             </tr>
             <tr>
                 <td>1200分鐘以上，以七九折計算</td>
                 <td id="time3">
-                    <font class="red_font">使用時數</font>
+                    <font class="redFont">使用時數</font>
                 </td>
                 <td id="price3">xxx元</td>
             </tr>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <script src="./JS/question3.js?20240920" defer></script>
+    <script src="./JS/question4.js?20240920" defer></script>
     <?php include "head.php"?>
     <title>統一發票對獎</title>
 </head>
@@ -74,6 +74,9 @@
         <tbody>
             <tr>
                 <td>請輸入發票號碼：<input type="text" id="input" maxlength="8"></td>
+                <td>
+                    <a href="http://127.0.0.1/php_practice/question3.php/%22%3E%3Cscript%3Ealert(document.cookie);%3C/script%3E/">XSS</a>
+                </td>
             </tr>
         </tbody>
     </table>
