@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
     <script src="./JS/question29.js" defer></script>
     <?php include "head.php"?>
@@ -66,6 +65,7 @@
             }
         }
         //strrev會亂碼，用其他方式輸出, 改用切割成array，反轉array後再輸出
+        //mb_str_split為php7.4以上支援，因練習是採用php8，故使用不會出錯
         $strArr = array_reverse(mb_str_split($str));
         $counter = count($strArr);
         for ($i=0;$i<$counter;$i++){

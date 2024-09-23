@@ -9,12 +9,12 @@
     <span>溫度換算計算機</span>
     <table>
         <tr>
-            <td><font>請輸入華氏度：</font></td>
+            <td><p>請輸入華氏度：</p></td>
             <td>轉換方向</td>
-            <td><font>請輸入攝氏度：</font></td>
+            <td><p>請輸入攝氏度：</p></td>
         </tr>
         <tr>
-            <td><input type = "text" id = "fahrenheit" maxlength = "8"></td>
+            <td><input type = "text" id = "fahrenheit" maxlength = "8" /></td>
             <td>
                 <button id = "celTofah"> ← </button>
                 <button id = "fahTocel"> → </button>

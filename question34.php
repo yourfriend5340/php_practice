@@ -19,21 +19,21 @@
             <tr>
                 <td>600分鐘以下，每分0.5元</td>
                 <td id="time1">
-                    <font class="redFont">使用時數</font>
+                    <p class="redFont">使用時數</p>
                 </td>
                 <td id="price1">xxx元</td>
             </tr>
             <tr>
                 <td>600~1200分鐘，以九折計算</td>
                 <td id="time2">
-                    <font class="redFont">使用時數</font>
+                    <p class="redFont">使用時數</p>
                 </td>
                 <td id="price2">xxx元</td>
             </tr>
             <tr>
                 <td>1200分鐘以上，以七九折計算</td>
                 <td id="time3">
-                    <font class="redFont">使用時數</font>
+                    <p class="redFont">使用時數</p>
                 </td>
                 <td id="price3">xxx元</td>
             </tr>
@@ -43,7 +43,7 @@
                 </td>
                 <td id="total">TOTAL</td>
             </tr>
-            </tboby>
+        </tbody>
     </table>
     <hr>
     <table class="question3">

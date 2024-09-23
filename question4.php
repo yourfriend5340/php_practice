@@ -21,23 +21,23 @@
             <tr>
                 <td>特別獎</td>
                 <td>
-                    <font class="redFont">86396830</font>
+                    <p class="redFont">86396830</p>
                 </td>
                 <td>同期統一發票收執聯8位數號碼與特別獎號碼相同者，獎金 1,000 萬元</td>
             </tr>
             <tr>
                 <td>特獎</td>
                 <td>
-                    <font class="redFont">53267964</font>
+                    <p class="redFont">53267964</p>
                 </td>
                 <td>同期統一發票收執聯8位數號碼與特別獎號碼相同者，獎金 200 萬元</td>
             </tr>
             <tr>
                 <td>頭獎</td>
                 <td>
-                    39635<font class="redFont">796</font><br>
-                    98978<font class="redFont">859</font><br>
-                    55566<font class="redFont">054</font><br>
+                    39635<p class="redFont">796</p><br>
+                    98978<p class="redFont">859</p><br>
+                    55566<p class="redFont">054</p><br>
                 </td>
                 <td>同期統一發票收執聯8位數號碼與特別獎號碼相同者，獎金 20 萬元</td>
             </tr>
@@ -64,10 +64,10 @@
             <tr>
                 <td colspan="3" class="td_center">
                     領獎期間自 113 年 08 月 06日 起至 113年 11 月 05 日止<br>
-                    <font class="redFont">☆故意選過號碼，一個一個字key in特獎號，會同時有中六獎的狀況☆</font>
+                    <p class="redFont">☆故意選過號碼，一個一個字key in特獎號，會同時有中六獎的狀況☆</p>
                 </td>
             </tr>
-            </tboby>
+        </tbody>
     </table>
     <hr>
     <table class="question3">

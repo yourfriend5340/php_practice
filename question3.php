@@ -67,7 +67,7 @@
                     <font class="redFont">☆故意選過號碼，一個一個字key in特獎號，會同時有中六獎的狀況☆</font>
                 </td>
             </tr>
-            </tboby>
+        </tbody>
     </table>
     <hr>
     <table class="question3">

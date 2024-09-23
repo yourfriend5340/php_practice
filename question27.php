@@ -47,7 +47,7 @@ if(isset($_GET['input']))
                 $result = false; //平年
             }
             
-            if($result == true)
+            if($result = true)
             {
                 $day = 366;
                 $YN = "是";
@@ -70,7 +70,7 @@ if(isset($_GET['input']))
                     <tr>
                         <td>".$year."</td>
                         <td>
-                            <font class='redFont'>".$day."天</font>
+                            <p class='redFont'>".$day."天</p>
                         </td>
                         <td>".$YN."</td>
                     </tr>
@@ -102,7 +102,7 @@ if(isset($_GET['input']))
                     <tr>
                         <td>".$year."</td>
                         <td>
-                            <font class='redFont'>".$day2."天</font>
+                            <p class='redFont'>".$day2."天</p>
                         </td>
                         <td>".$YN."</td>
                     </tr>

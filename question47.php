@@ -42,13 +42,13 @@
                 <td>…/0</td>
             </tr>
 
-            </tboby>
+        </tbody>
     </table>
 
-    <font> 程式判斷邏輯為：</font>
-    <font>ex：因每一列有三格，想輸出1~6的乘法表，印4時(即要輸出的第4個數字，非指4本身值)的位置輸出位置為：
+    <p> 程式判斷邏輯為：</p>
+    <p>ex：因每一列有三格，想輸出1~6的乘法表，印4時(即要輸出的第4個數字，非指4本身值)的位置輸出位置為：
         4除以3，得到餘為1，在餘為1的狀況時，會印出一個tr標籤做換行 
-        </font>
+    </p>
     <hr>
     <form class="form1" action="question47.php" method="GET">
     <table class="question47Input">
@@ -100,7 +100,7 @@
                 }
                 for($j=0;$j<=$counter;$j++)
                 {
-                    array_push($tempArr, ($smallest + $j)); 
+                    array_push($tempArr, ($smallest + $j));
                 }
             }
         } 
@@ -142,8 +142,15 @@
 
             //在最後一次$i迴圈時，計算空白處要補多少td
             if($i==$Arr_count){
-                //例如，有16個數字，%3之後可得1。3-1=2，知道要補2個td
-                $needtd = 3 -($Arr_count % 3);
+                //例如，有16個數字，%3之後可得1。3-1=2，知道要補2個td，但整除不補td
+                if (($Arr_count % 3) != 0)
+                {
+                    $needtd = 3 -($Arr_count % 3);
+                }
+                else
+                {
+                    $needtd = 0;
+                }
                 for($z=1;$z<=$needtd;$z++)
                 {
                     echo "<td></td>";
