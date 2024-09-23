@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <script src="./JS/question4.js?20240920" defer></script>
+    <script src="js/question4.js?20240920" defer></script>
     <?php include "head.php"?>
     <title>統一發票對獎</title>
 </head>

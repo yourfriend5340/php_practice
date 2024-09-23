@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./JS/question47.js?20240923" defer></script>
+    <script src="js/question47.js?20240923" defer></script>
     <?php include "head.php"?>
     <title>九九乘法表</title>
 </head>

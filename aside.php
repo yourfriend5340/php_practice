@@ -32,7 +32,7 @@
                     <td>".$questionArr[$i].". ".$questionTitleArr[$questionArr[$i]]."</td>
                     <td>
                         <a target='display' href='./question".$questionArr[$i].".php'>
-                            <button>進入</button>
+                            <button class='buttonRadius10'>進入</button>
                         </a>
                     </td>
                 </tr>

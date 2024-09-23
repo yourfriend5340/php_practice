@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./JS/question34.js?20240923" defer></script>
+    <script src="js/question34.js?20240923" defer></script>
     <?php include "head.php"?>
     <title>電話費計算</title>
 </head>

@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <script src="./JS/question3.js?20240920" defer></script>
+    <script src="js/question3.js?20240920" defer></script>
     <?php include "head.php"?>
     <title>統一發票對獎</title>
 </head>
 
-<body>
+<body class="indexBody">
     <span>統一發票對獎</span>
-    <table>
-        <thead>
+    <table class="indexTable">
+        <thead class="indexThead">
             <tr>
                 <td>獎別</td>
                 <td>號碼</td>
@@ -35,9 +35,9 @@
             <tr>
                 <td>頭獎</td>
                 <td>
-                    39635<p class="redFont">796</p><br>
-                    98978<p class="redFont">859</p><br>
-                    55566<p class="redFont">054</p><br>
+                    39635<em class="redFont">796</em><br>
+                    98978<em class="redFont">859</em><br>
+                    55566<em class="redFont">054</em><br>
                 </td>
                 <td>同期統一發票收執聯8位數號碼與特別獎號碼相同者，獎金 20 萬元</td>
             </tr>

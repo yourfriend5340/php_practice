@@ -50,11 +50,11 @@
     padding: 0;
 }
 
-html {
+.indexHtml {
     height: 100%;
 }
 
-body {
+.indexBody {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@ body {
 #footer_wrapper {}
 
 /*1.2 header*/
-header {
+.indexHeader {
     background: rgb(204, 201, 201);
     height: fit-content;
 }
@@ -85,7 +85,7 @@ header {
 #content {}
 
 /*1.6 main*/
-main {
+.indexMain {
     flex-grow: 1;
     min-width: 1300px;
     background: rgb(255, 255, 255);
@@ -93,7 +93,7 @@ main {
 }
 
 /*1.7 aside*/
-aside {
+.indexAside {
     display: inline-flex;
     flex-direction: column;
     background: rgb(255, 255, 255);
@@ -109,7 +109,7 @@ aside {
 }
 
 /*1.8 section*/
-section {
+.indexSection {
     display: inline-flex;
     flex-direction: column;
     margin-top: 5px;
@@ -124,7 +124,7 @@ section {
 }
 
 /*1.9 footer*/
-footer {
+.indexFooter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,6 +134,11 @@ footer {
     color: rgb(255, 255, 255);
 }
 
+/*1-10 other*/
+.indexIframe {
+    height: 100%;
+    width: 100%;
+}
 /* 2. link
 
 -----------------------------------------------------------------------------------------------
@@ -148,56 +153,45 @@ a:hover {}
 -----------------------------------------------------------------------------------------------
 
 ===============================================================================================*/
-button {
-    border-radius: 15%;
-    padding: 1px;
+.buttonRadius10 {
+    border-radius: 10%;
+    margin: 2px;
 }
 
+.question8Button{
+    width:30px;
+    height:30px;
+}
 /* 4 input,select,textarea
 
 -----------------------------------------------------------------------------------------------
 
 ===============================================================================================*/
-/*5 user_setting 好像沒有看到放元件(元素)的區塊，選擇放這邊
+/*5 user_setting
 
 -----------------------------------------------------------------------------------------------
 
 ===============================================================================================*/
-/*---- 標題 ----*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-align: center;
-}
 
-/*---- 表格元件 ----*/
 
 .indexTable {
     border-collapse: collapse;
     border: 2px solid rgb(60, 63, 65);
 }
 
-thead {
+.indexThead {
     background-color: rgb(228,240,245);
 }
+.indexTable th{
+    border:1px solid rgb(0,0,0);
+}
 
-tbody>tr:nth-of-type(even) {
+.indexTable tbody>tr:nth-of-type(even) {
     background-color: rgb(240, 245, 247);
 }
 
-th,
-tr,
-td {
-    border: 1px solid #7a7f82;
-    padding: 1px;
-}
-
-.indexIframe {
-    height: 100%;
-    width: 100%;
+.indexTable tr td{
+    border:1px solid rgb(0,0,0);
 }
 
 /*6 class
@@ -218,38 +212,43 @@ td {
     text-align: start;
 }
 
+.alignCenter{
+    text-align: center;
+}
+
 /*---- 表格相關 ----*/
-table.question3>tbody tr td {
+.question3>tbody tr td {
     border-color: rgb(255, 255, 255);
 }
 
-table.question47Input {
+.question47Input {
     border: none;
 }
 
-table.question47Input td {
+.question47Input td {
     /*border: 1px solid;*/
     border-color: rgb(255, 255, 255);
 }
 
-table.qustion47SubTable td {
+.qustion47SubTable td {
     /*border: 1px solid;*/
     border-color: rgb(255, 255, 255);
 }
 
-table.qustion47SubTable,
+.qustion47SubTable,
 tbody>tr:nth-last-of-type(even) {
     background-color: rgb(255, 255, 255);
 }
 
-table.qustion47Sub2Table {
+.qustion47Sub2Table {
     border: none;
 }
 
-table.qustion47Sub2Table tr {
+.qustion47Sub2Table tr {
     border: none;
 }
 
-table.qustion47Sub2Table td {
+.qustion47Sub2Table td {
     border: none;
 }
+
