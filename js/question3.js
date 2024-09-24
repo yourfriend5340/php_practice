@@ -56,32 +56,32 @@ $('#input').keyup(function () {
         switch (biggest) {
             case 3: {
                 getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆</font>輸入：" + value + ", 中三星，六獎兩百元</td></tr>");
+                $(this).after("<tr><td><span class='red_font'>☆☆☆</span>輸入：" + value + ", 中三星，六獎兩百元</td></tr>");
                 break;
             }
             case 4: {
                 getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆☆</font>輸入：" + value + ", 中四星，五獎一仟元</td></tr>");
+                $(this).after("<tr><td><span class='red_font'>☆☆☆☆</span>輸入：" + value + ", 中四星，五獎一仟元</td></tr>");
                 break;
             }
             case 5: {
                 getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆☆☆</font>輸入：" + value + ", 中五星，四獎四仟元</td></tr>");
+                $(this).after("<tr><td><span class='red_font'>☆☆☆☆☆</span>輸入：" + value + ", 中五星，四獎四仟元</td></tr>");
                 break;
             }
             case 6: {
                 getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆☆☆☆</font>輸入：" + value + ", 中六星，三獎一萬元</td></tr>");
+                $(this).after("<tr><td><span class='red_font'>☆☆☆☆☆☆</span>輸入：" + value + ", 中六星，三獎一萬元</td></tr>");
                 break;
             }
             case 7: {
                 getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆☆☆☆☆</font>輸入：" + value + ", 中七星，二獎四萬元</td></tr>");
+                $(this).after("<tr><td><span class='red_font'>☆☆☆☆☆☆☆</span>輸入：" + value + ", 中七星，二獎四萬元</td></tr>");
                 break;
             }
             case 8: {
                 getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>好high！！！</font>輸入：" + value + ", 車子頭款有了，中頭獎20萬</td></tr>");
+                $(this).after("<tr><td><span class='red_font'>好high！！！</span>輸入：" + value + ", 車子頭款有了，中頭獎20萬</td></tr>");
                 $("#input").val("");
                 break;
             }

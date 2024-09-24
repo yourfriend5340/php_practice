@@ -5,10 +5,10 @@
     <?php include "head.php"?>
     <title>電話費計算</title>
 </head>
-<body>
+<body class="indexBody">
     <span>電話費計算</span>
-    <table>
-        <thead>
+    <table class="indexTable">
+        <thead class="indexThead">
             <tr>
                 <td>費率說明</td>
                 <td>時間(分)</td>

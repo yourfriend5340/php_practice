@@ -17,7 +17,7 @@
         </thead>
         <tr>
             <td><input type = "text" id = "fahrenheit" maxlength = "8" /></td>
-            <td class="">
+            <td class="alignCenter">
                 <button id = "celTofah" class="question8Button"> ← </button>
                 <button id = "fahTocel" class="question8Button"> → </button>
             </td>

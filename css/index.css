@@ -45,6 +45,7 @@
 
 ===============================================================================================*/
 /*1.0 defind*/
+
 * {
     margin: 0;
     padding: 0;
@@ -211,44 +212,48 @@ a:hover {}
 .alignStart {
     text-align: start;
 }
-
+.noBorder{
+    border:none;
+}
 .alignCenter{
     text-align: center;
+    justify-content: center;
+    align-content: center;
 }
 
+.clearfix::after{
+    content:'';
+    display:block;
+    clear:both;
+}
 /*---- 表格相關 ----*/
 .question3>tbody tr td {
     border-color: rgb(255, 255, 255);
 }
-
+/*
 .question47Input {
     border: none;
+
+}
+*/
+
+.question47SubTable{
+    border:2px solid rgb(0,0,0);
+}
+.question47SubTable tr td{
+    border: 1px solid rgb(0,0,0);
+
 }
 
-.question47Input td {
-    /*border: 1px solid;*/
-    border-color: rgb(255, 255, 255);
+.question47SubTable tbody>tr:nth-last-of-type(even) {
+    background-color: rgb(230, 230, 230);
 }
 
-.qustion47SubTable td {
-    /*border: 1px solid;*/
-    border-color: rgb(255, 255, 255);
-}
-
-.qustion47SubTable,
-tbody>tr:nth-last-of-type(even) {
-    background-color: rgb(255, 255, 255);
-}
-
-.qustion47Sub2Table {
+.question47Sub2Table tr td{
     border: none;
 }
 
-.qustion47Sub2Table tr {
-    border: none;
-}
-
-.qustion47Sub2Table td {
-    border: none;
+.question47Sub2Table tbody>tr:nth-last-of-type(even){
+    background-color: rgb(230, 230, 230);
 }
 

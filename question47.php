@@ -5,10 +5,10 @@
     <?php include "head.php"?>
     <title>九九乘法表</title>
 </head>
-<body>
+<body class="indexBody">
     <span>九九乘法表-本例概念</span>
-    <table class='question47Maintable'>
-        <thead>
+    <table class='indexTable'>
+        <thead class="indexThead">
             <tr>
                 <td>輸出階層 / 餘數</td>
                 <td>1</td>
@@ -50,14 +50,17 @@
         4除以3，得到餘為1，在餘為1的狀況時，會印出一個tr標籤做換行 
     </p>
     <hr>
-    <form class="form1" action="question47.php" method="GET">
-    <table class="question47Input">
+    <form class="form1" action="question47.php" id="question47" method="GET">
+    <table class="noBorder">
         <tbody>
             <tr>
                 <td>請輸入想顯示的數字：
                     <input type="text" name="47input" id="47input"  placeholder="ex：1,2,3,4~7">
                     <input type="submit" value="輸入">
-                    <span id="popup"></span>
+                    <input type="checkbox" id="47check" name="47check" value="1">
+                    <label for="47check">是否製作練習題</label>
+                    <!--要斷行，故意用p-->
+                    <p class="redFont" id="popup"></p>
                 </td>
             </tr>
         </tbody>
@@ -68,6 +71,12 @@
     $tempArr=[];
     if(isset($_GET['47input']))
     {
+        if(isset($_GET['47check'])) {
+            $getchk = intval($_GET['47check']);
+        }
+        else{
+            $getchk = 0;
+        }
         $getstr = $_GET['47input'];
         $getstr = rtrim($getstr,',');
         $getstr = rtrim($getstr,'~');
@@ -113,9 +122,7 @@
 
         echo "<table class='question47SubTable'>
                 <thead>
-                    <tr>
-                        <td colspan='3'>九九乘法 output</td>
-                    </tr>
+                        <th class='indexThead' colspan='3'>九九乘法 output</th>  
                 </thead>
                 <tbody>";
         for ($i=1;$i<=$Arr_count;$i++)
@@ -127,14 +134,17 @@
             {
                 echo "<tr>";
             }
-            
-            echo "<td><table class='qustion47Sub2Table'><tdoby>";
+
+            echo "<td><table class='question47Sub2Table'><tdoby>";
+
             for($j=1;$j<=9;$j++)
-            {   
+            {
+                ($getchk ===1) ? $outputValue = '' : $outputValue = $inputNumArr[$i-1] * $j;
+
                 echo "<tr>
                         <td class='alignStart'>".$inputNumArr[$i-1]." X ".$j."</td>".
                         "<td class='alignStart'> &nbsp; = &nbsp; </td>".
-                        "<td class='alignEnd'>".$inputNumArr[$i-1] * $j."</td>
+                        "<td class='alignEnd'>".$outputValue."</td>
                     </tr>";
             }
             echo "</tbody></table></td>";
@@ -163,6 +173,7 @@
         }
         echo "</tdoby></table>";
     }
+
     
 ?>
 

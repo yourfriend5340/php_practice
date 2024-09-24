@@ -5,7 +5,7 @@
     <?php include "head.php"?>
     <title>判斷閏年</title>
 </head>
-<body>
+<body class="indexBody">
     <span>判斷閏年</span>
     <form class="form1" action="question27.php" method="GET" >
         <table class="question3">
@@ -21,8 +21,7 @@
             </tbody>
         </table>
     </form>
-</body>
-</html>
+
 
 <?php
 if(isset($_GET['input']))
@@ -64,8 +63,8 @@ if(isset($_GET['input']))
                 $day = 365;
                 $YN = "否";
             }
-            echo "<br /><table>
-                    <thead>
+            echo "<br /><table class='indexTable'>
+                    <thead class='indexThead'>
                         <tr><td colspan='3'>方法一</td></tr>
                     </thead>
                     <tbody>
@@ -106,8 +105,8 @@ if(isset($_GET['input']))
             {
                 $YN = "否";
             }
-                echo "<table>
-                    <thead>
+                echo "<table class='indexTable'>
+                    <thead class='indexThead'>
                         <tr><td colspan='3'>方法二</td></tr>
                     </thead>
                     <tbody>
@@ -134,3 +133,6 @@ if(isset($_GET['input']))
     }
 }
 ?>
+
+</body>
+</html>
