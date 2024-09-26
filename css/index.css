@@ -230,13 +230,18 @@ a:hover {}
 .question3>tbody tr td {
     border-color: rgb(255, 255, 255);
 }
-/*
-.question47Input {
-    border: none;
-
+.question4Tr{
+    background-color: rgb(200,200,250);
 }
-*/
 
+.question4TrStart td{
+    padding:2px;
+}
+/*
+.q4TD{
+    margin:1px;
+    background-color: red;
+}*/
 .question47SubTable{
     border:2px solid rgb(0,0,0);
 }
@@ -256,4 +261,3 @@ a:hover {}
 .question47Sub2Table tbody>tr:nth-last-of-type(even){
     background-color: rgb(230, 230, 230);
 }
-

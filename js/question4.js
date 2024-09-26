@@ -1,118 +1,95 @@
-$(function() {
-$('#input').keyup(function () {
-    var value = $(this).val();
+$(function(){
+    //新增一行資料
+    $('#newLine').click(function () {
+        var serial = Number($("#recordCount").text());
+        if(serial.isNaN){
+            $("#caution").text("Oooooops!!!無法轉成數字");
+            return false;
+        }
+        else{
+            serial = serial +1;
+        }
 
-    //定義中獎號碼
-    var arr_specialAward = ['86396830'];//特別獎
-    var arr_jackpot = ['53267964'];//特獎
-    var arr_headPrize = ['39635796', '98978859', '55566054'];
+        //各欄的id取名rule，serial的流水號加上，-1 ~ -7 的編號
+        var insertHTML = '<tr id="no'+ serial +'">' +
+                                    '<td>'+ serial +'</td>' +
+                                    '<td><input type="number" min="1" max="42" step="1" id="no'+ serial +'-1" class="q4TD"></td>' +
+                                    '<td><input type="number" min="1" max="42" step="1" id="no'+ serial +'-2" class="q4TD"></td>' +
+                                    '<td><input type="number" min="1" max="42" step="1" id="no'+ serial +'-3" class="q4TD"></td>' +
+                                    '<td><input type="number" min="1" max="42" step="1" id="no'+ serial +'-4" class="q4TD"></td>' +
+                                    '<td><input type="number" min="1" max="42" step="1" id="no'+ serial +'-5" class="q4TD"></td>' +
+                                    '<td><input type="number" min="1" max="42" step="1" id="no'+ serial +'-6" class="q4TD"></td>' +
+                                    '<td><input type="number" min="1" max="42" step="1" id="no'+ serial +'-7" class="q4TD"></td>' +
+                                    '<td><button class="question4Insert">確定</button></td>' +
+                                    '</tr>';
+        //寫法二專用，用寫法1時記得把下行註解
+        $("#question4TrStart").append(insertHTML);
+    /*
+        //寫法1-1：利用複合鍵的方式去
+        //留意程式的先後順序，要先有元件才能綁事件
+        $("#question4TrStart").append(insertHTML);
+        //使用者送出一行資料之檢查
+        $("#no"+serial+" .question4Insert").click(function(){
+            var check = /^[1-42]$/;
+            var counter = Number($("#recordCount").text());
+            alert('test');
+            //共有幾筆獎卷資料
+            if(counter > 0) {
+                for (i=1;i<=counter;i++) {
 
-    var ticket = new RegExp('[0-9]$')
-    if (!ticket.test(value)) {
-        $(this).after("<tr><td>請輸入8個 '阿拉伯數字'</td></tr>");
-        $("#input").val("");
-    }
+                    //每筆資料有8欄位(流水號+7個獎號)
+                    for(j=1;j<=7;j++) {
+                        var id = "#"+ i + "-" + j;
+                        var serial = Number($(id).text());
 
-    //輸入至少三個字後開始執行
-    if (value.length >= 3) {
-
-        var counter = 0;
-        var biggest = 0;
-        var getAwardFlag = 0;
-
-        const input_split = value.split('');//將輸入的值轉陣列
-        const reverse_input_array = input_split.reverse();//反轉陣列
-
-        //判斷頭獎的獎別
-        for (ArrCnt = 0; ArrCnt < arr_headPrize.length; ArrCnt++) {
-            var char = arr_headPrize[ArrCnt];
-            const Award_split = char.split('');//令獎號的字串轉為陣列
-            const reverse_Award_array = Award_split.reverse(); //反轉陣列
-
-            console.log(reverse_Award_array + '___' + reverse_input_array);
-
-            for (i = 0; i <= [(reverse_input_array.length) - 1]; i++) {
-                if (reverse_Award_array[i] == reverse_input_array[i]) {
-                    counter++
-                }
-                else {
-                    break;
-                }
-
-                //考到多重中獎的可能性，故多設一個biggest變數紀錄最大獎
-                //第一次中獎時，給biggest值
-                if (biggest == 0 && counter > 0) {
-                    biggest = counter;
-                }
-                else {
-                    //更大獎項出現時，更新biggest
-                    if (counter > biggest) {
-                        biggest = counter;
+                        if (!check.test(serial)) {
+                            $("#caution").text("第"+ j +"欄有問題，請輸入1~42的阿拉伯數字");
+                            //$("#caution").val("");
+                            return false;
+                        }
                     }
                 }
             }
-        }
-
-        switch (biggest) {
-            case 3: {
-                getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆</font>輸入：" + value + ", 中三星，六獎兩百元</td></tr>");
-                break;
+            else{
+                //原則上確定鍵是使用者新增一行才會產生，應該不會跑到這邊
+                $("#caution").text("沒有資料，故按這個鍵沒有用");
             }
-            case 4: {
-                getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆☆</font>輸入：" + value + ", 中四星，五獎一仟元</td></tr>");
-                break;
-            }
-            case 5: {
-                getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆☆☆</font>輸入：" + value + ", 中五星，四獎四仟元</td></tr>");
-                break;
-            }
-            case 6: {
-                getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆☆☆☆</font>輸入：" + value + ", 中六星，三獎一萬元</td></tr>");
-                break;
-            }
-            case 7: {
-                getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>☆☆☆☆☆☆☆</font>輸入：" + value + ", 中七星，二獎四萬元</td></tr>");
-                break;
-            }
-            case 8: {
-                getAwardFlag = 1;
-                $(this).after("<tr><td><font class='red_font'>好high！！！</font>輸入：" + value + ", 車子頭款有了，中頭獎20萬</td></tr>");
-                $("#input").val("");
-                break;
-            }
+        });
+    */
+    /*
+        //寫法1-2
+        var $insertHTML = $(insertHTML);//先把jquery物件化
+        //以下兩行是可以改變先後順序，沒有要求先插入物件，再綁定事件，
+        $insertHTML.appendTo("#question4TrStart");
+        $insertHTML.find(".question4Insert").click(function(){
+            alert('test');
+        });
+    */
+    /*
+        //寫法1-3
+        var $insertHTML = $(insertHTML);//先把jquery物件化
+        //$insertHTML.appendTo("#question4TrStart");
+        $("#question4TrStart").append($insertHTML);
+        $insertHTML.find(".question4Insert").click(function(){
+            alert('test');
+        });
 
-        }
-
-        if (value.length == 8) {
-            if (value === arr_specialAward[0]) {
-                $(this).after("<tr><td><font class='red_font'>買房子了辣！！！</font>輸入：" + value + ", 發了發了，中特別獎1000萬</td></tr>");
-                $("#input").val("");
-                return false;
-            }
-
-            if (value === arr_jackpot[0]) {
-                $(this).after("<tr><td><font class='red_font'>超high！！！</font>輸入：" + value + ", 房子頭期款有了，中特獎200萬</td></tr>");
-                $("#input").val("");
-                return false;
-            }
-
-            if (getAwardFlag == 0) {
-                $(this).after("<tr><td>輸入：" + value + "，沒有中獎</td></tr>");
-                $("#input").val("");
-                return false;
-            }
-
-            $("#input").val("");
-        }
-
-
-    }
-
-
-});
+    */
+        $("#recordCount").text(serial);
+    });
 })
+
+/*
+//寫法2-1
+$(document).on('click'," .question4Insert",function(){
+   alert('test');
+})
+*/
+
+//寫法2-2
+//以下兩行都是可以執行的，有指定父元素的方式
+//$('.indexTable').on('click'," .question4Insert",function(){
+$('#question4TrStart').on('click'," .question4Insert",function(){
+    alert('test');
+})
+
