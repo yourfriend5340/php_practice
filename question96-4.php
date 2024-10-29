@@ -13,5 +13,6 @@
     <br />
     <input class='input' name='textAreaInput' value='<?php if(isset($_GET['textAreaInput'])){echo $_GET['textAreaInput'];}?>' />
     <br />
+    <span id='popup'></span>
 </body>
 </html>

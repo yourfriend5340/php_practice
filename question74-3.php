@@ -12,7 +12,7 @@
     請輸入文字：
     <br />
     <form method='GET' action='question74-3.php'>
-    <textarea row='3' col='3' class='textAreaInput' name='textAreaInput' placeholder='<?php if(isset($_GET['textAreaInput'])){echo $_GET['textAreaInput'];}?>'></textarea>
+    <textarea row='3' col='3' class='textAreaInput' name='textAreaInput'><?php if(isset($_GET['textAreaInput'])){echo $_GET['textAreaInput'];}?></textarea>
     <input type="submit" value="送出">
     </form>
     <span id=popup></span>
@@ -24,13 +24,14 @@
         $input = $_GET["textAreaInput"];
         if(strlen($input) > 100)
         {
-            echo "<span id='pupup'>計算出來的結果是：".mb_strlen($input)."個字串長度, 長度超過100個字</span><br />";
+            echo "<span id='popup'>計算出來的結果是：".mb_strlen($input)."個字串長度, 長度超過100個字</span><br />";
+            echo "<span id='popup3'>超過字元範圍為：".substr($input,100,strlen($input))."</span><br />";
         }
         else 
         {
-            echo "<span id='pupup'>計算出來的結果是：".mb_strlen($input)."個字串長度</span><br />";
+            echo "<span id='popup'>計算出來的結果是：".mb_strlen($input)."個字串長度</span><br />";
         }
-        echo "<span id='pupup'>計算出來的結果是：".strlen($input)."個字元長度</span><br />";
+        echo "<span id='popup2'>計算出來的結果是：".strlen($input)."個字元長度</span><br />";
         //echo "<span id='pupup2'>計算出來的結果是：".mb_strlen($input)."個字串長度</span><br />";
     }
 

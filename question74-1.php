@@ -12,7 +12,7 @@
     請輸入文字：
     <br />
     <form method='GET' action='question74-1.php'>
-    <textarea row='3' col='3' class='textAreaInput' name='textAreaInput' placeholder='<?php if(isset($_GET['textAreaInput'])){echo $_GET['textAreaInput'];}?>'></textarea>
+    <textarea row='3' col='3' class='textAreaInput' name='textAreaInput'><?php if(isset($_GET['textAreaInput'])){echo $_GET['textAreaInput'];}?></textarea>
     <input type="submit" value="送出">
     </form>
     <br />
@@ -21,6 +21,7 @@
     if(isset($_GET["textAreaInput"]))
     {
         $input = $_GET["textAreaInput"];
+        echo "<span id='pupup0'>有找到空白字元，共有 ".substr_count($input,' ')." 個</span><br />";
         echo "<span id='pupup'>計算出來的結果是：".strlen($input)."個字元長度</span><br />";
         echo "<span id='pupup2'>計算出來的結果是：".mb_strlen($input)."個字串長度</span><br />";
     }
