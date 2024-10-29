@@ -3,7 +3,7 @@
 <head>
     <script src="js/question74-2.js?20240923" defer></script>
     <?php include "head.php"?>
-    <title></title>
+    <title>計算字元</title>
 </head>
 <body>
     <span>/*74.設計一程式計算一文字檔內的字元個數。*/</span><br />

@@ -3,7 +3,7 @@
 <head>
     <script src="js/question8.js?20240923" defer></script>
     <?php include "head.php"?>
-    <title>華氏攝氏換算</title>
+    <title>計算字元</title>
 </head>
 <body>
     <span>/*74.設計一程式計算一文字檔內的字元個數。*/</span><br />
@@ -21,6 +21,9 @@
     if(isset($_GET["textAreaInput"]))
     {
         $input = $_GET["textAreaInput"];
+        echo $input.'<br />';
+        echo substr_count($input,"\r\n")."<br />";
+        echo substr_count($input,"\r\n")."<br />";
         echo "<span id='pupup0'>有找到空白字元，共有 ".substr_count($input,' ')." 個</span><br />";
         echo "<span id='pupup'>計算出來的結果是：".strlen($input)."個字元長度</span><br />";
         echo "<span id='pupup2'>計算出來的結果是：".mb_strlen($input)."個字串長度</span><br />";

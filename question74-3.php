@@ -3,11 +3,11 @@
 <head>
     <script src="js/question8.js?20240923" defer></script>
     <?php include "head.php"?>
-    <title>華氏攝氏換算</title>
+    <title>計算字元</title>
 </head>
 <body>
     <span>/*74.設計一程式計算一文字檔內的字元個數。*/</span><br />
-    <span>版本一: 給予一個 textarea，貼上後送出用 PHP 計算有幾個字</span><br />
+    <span>版本三: 限制 textarea 輸入上限為 100 個字，送出後 PHP 驗證超過字數就跳警告</span><br />
     <br />
     請輸入文字：
     <br />

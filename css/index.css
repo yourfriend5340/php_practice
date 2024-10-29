@@ -171,7 +171,7 @@ a:hover {}
 -----------------------------------------------------------------------------------------------
 ===============================================================================================*/
 .textAreaInput {
-    width: 700px;
+    width: 770px;
     height: 50px;
 }
 
@@ -271,8 +271,43 @@ a:hover {}
 
 .question47Sub2Table tr td {
     border: none;
+
 }
 
 .question47Sub2Table tbody>tr:nth-last-of-type(even) {
     background-color: rgb(230, 230, 230);
+}
+
+.question47-1SubTable{
+  border: none;
+}
+.question47-1SubTable tr td {
+  border: 1px solid rgb(0, 0, 0);
+}
+.question47-1Sub2Table tr td {
+  border: none;
+}
+
+.question47-2SubTable{
+  border: none;
+}
+.question47-2SubTable tr td {
+  border: 1px solid rgb(0, 0, 0);
+}
+.question47-2Sub2Table tr td {
+  border: none;
+}
+
+.question47-3SubTable{
+  border: none;
+}
+.question47-3SubTable tr td {
+  border: 1px solid rgb(0, 0, 0);
+}
+.question47-3Sub2Table tr td {
+  border: none;
+}
+
+.inputNumber47-3{
+  width: 50px;
 }
