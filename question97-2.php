@@ -11,9 +11,30 @@
 <br />
 請輸入文字：(空值不予回應，輸入後請移開滑鼠並點一下左鍵)
 <br />
-<textarea class='textAreaInput' name='textAreaInput'></textarea>
+<textarea class='textAreaInput' id='textAreaInput' placeholder='請輸入文字'></textarea>
 <br />
-<pre id='popup0'></pre><br />
-<pre id='popup1'></pre><br />
-<pre id='popup2'></pre><br />
+<hr>
+<br />
+
+結果區：
+<span id='popup0'></span><br />
+textarea ver.<br />
+<textarea class='textAreaInput' id='textAreaOutput0'></textarea><br />
+pre ver.
+<pre class='textAreaInput' id='preOutput0'></pre>
+<br /><hr><br />
+
+<span id='popup1'></span><br />
+textarea ver.<br />
+<textarea class='textAreaInput' id='textAreaOutput1'></textarea><br />
+pre ver.
+<pre class='textAreaInput' id='preOutput1'></pre>
+<br /><hr><br />
+
+<span id='popup2'></span><br />
+textarea ver.<br />
+<textarea class='textAreaInput' id='textAreaOutput2'></textarea><br />
+pre ver.
+<pre class='textAreaInput' id='preOutput2'></pre>
+
 </html>

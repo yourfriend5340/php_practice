@@ -18,19 +18,17 @@
 
     if(isset($_GET["textAreaInput"]))
     {
-        $input = $_GET["textAreaInput"];
-
+        $input = trim($_GET["textAreaInput"]);
         $replaceWord = str_replace( ' ','',$input);
-        $wordArea = "<textarea class='textAreaInput' name='textAreaInput'>".$replaceWord."</textarea>";
+        $wordArea = "<textarea class='textAreaInput' name='textAreaInput' placeholder='請輸入文字'>".htmlspecialchars($replaceWord)."</textarea>";
     }
     else
     {
-        $wordArea = "<textarea class='textAreaInput' name='textAreaInput'></textarea>";
+        $wordArea = "<textarea class='textAreaInput' name='textAreaInput' placeholder='請輸入文字'></textarea>";
     }
     $outputHtml .= $wordArea."
           <input type='submit' value='送出'>
           </form>
-          <br />
     ";
 
     echo $outputHtml;
