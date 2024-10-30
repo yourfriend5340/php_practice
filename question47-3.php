@@ -57,8 +57,8 @@
                 <td>請輸入想顯示的數字：
                     <input type="text" name="47input" id="47input"  placeholder="ex：1,2,3,4~7">
                     <input id="submitBtn" type="submit" value="輸入">
-                    <input type="checkbox" id="47check" name="47check" value="1">
-                    <label for="47check">是否製作練習題</label>
+<!--                    <input type="checkbox" id="47check" name="47check" value="1">-->
+<!--                    <label for="47check">是否製作練習題</label>-->
                     <!--要斷行，故意用p-->
                     <p class="redFont" id="popup"></p>
                 </td>
@@ -71,15 +71,16 @@
     $tempArr=[];
     if(isset($_GET['47input']))
     {
-        if(isset($_GET['47check'])) {
-            $getchk = intval($_GET['47check']);
-        }
-        else{
-            $getchk = 0;
-        }
+//        if(isset($_GET['47check'])) {
+//            $getchk = intval($_GET['47check']);
+//        }
+//        else{
+//            $getchk = 0;
+//        }
+        $getchk = 1;
         $getstr = $_GET['47input'];
         $getstr = rtrim($getstr,',');
-        $getstr = rtrim($getstr,'~');
+        //$getstr = rtrim($getstr,'~');
         //字串處理，以逗號判斷，切開字串存入array
         $inputArr=explode(",",$getstr);
 
@@ -128,11 +129,11 @@
         } 
         
         //將處理完的字串做sort後，儲存字串處理結果
-        array_unique($tempArr);
         sort($tempArr);
-        print_r($tempArr);
-        
-        $inputNumArr = $tempArr;
+
+        $inputNumArr = array_unique($tempArr);
+        $inputNumArr = array_values($inputNumArr);
+        //print_r($inputNumArr);
         //$inputNumArr = [1,2,3,4,5,6,7,8,9];
         
         $Arr_count = count($inputNumArr);
@@ -157,7 +158,7 @@
             for($j=1;$j<=9;$j++)
             {
                 $outputHtml = (($getchk ===1)
-                    ? "<input type=number id='".$inputNumArr[$i-1].$j."'class='inputNumber47-3' min='0'/><td><span class='redFont' id='s".$inputNumArr[$i-1].$j."'></span></td>"
+                    ? "<input type=number id='question".$inputNumArr[$i-1].$j."' class='inputNumber47-3' min='0'/><td><span id='s".$inputNumArr[$i-1].$j."'></span></td>"
                     : $inputNumArr[$i-1] * $j);
 
                 echo "<tr>

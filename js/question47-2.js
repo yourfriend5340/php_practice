@@ -8,11 +8,11 @@ $(function() {
             //$(this).after("<font class='red_font' id='popup'>請輸入範例中字元，如0~9或 '~' 或是 ','</font>");
             //$("#47input").val("");
             $("#popup").text("請輸入範例中字元，如0~9或 '~' 或是 ','");
-            $("#submitBtn").attr('disabled',true);
+            $("#submitBtn").prop('disabled',true);
         }
         else{
             $("#popup").text("");
-            $("#submitBtn").attr('disabled',false);
+            $("#submitBtn").prop('disabled',false);
         }
 
     });

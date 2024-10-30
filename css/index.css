@@ -213,7 +213,9 @@ a:hover {}
 .redFont {
     color: rgb(255, 0, 0);
 }
-
+.greenFont{
+  color:rgb(0,255,0);
+}
 .alignEnd {
     text-align: end;
 }

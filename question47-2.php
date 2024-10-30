@@ -80,7 +80,7 @@
         $getstr = $_GET['47input'];
         $getstr = trim($getstr);
         $getstr = trim($getstr,',');
-        $getstr = trim($getstr,'~');
+        //$getstr = trim($getstr,'~');
 
         //字串處理，以逗號判斷，切開字串存入array
         $inputArr=explode(",",$getstr);
@@ -132,7 +132,7 @@
         //將處理完的字串做sort後，儲存字串處理結果
         array_unique($tempArr);
         sort($tempArr);
-        print_r($tempArr);
+        //print_r($tempArr);
         $inputNumArr = $tempArr;
         //$inputNumArr = [1,2,3,4,5,6,7,8,9];
         
