@@ -9,7 +9,7 @@ $(function () {
     var uppercaseLowBound = 65;//大寫A
     var uppercaseUpBoune = 90;//大寫Z
 
-    var check = new RegExp('^[A-Z,;.\\s\\n]+$')
+    var check = new RegExp('^[A-Z]+$')
     if (!check.test(textVal)) {
 
       var newText = textVal.slice(0,-1);

@@ -43,25 +43,60 @@ if (isset($_GET["textAreaInput"]))
     }
 
     $regexStr = '%^[ -~]+$%';
-    $inputArr = str_split($input);
+    //$inputArr = str_split($input);
+    $inputArr = preg_split('/(?<!^)(?!$)/u',$input);
     //print_r($inputArr);
+    $uppercaseUpBound = 90;
+    $uppercaseLowBound = 65;
+    $lowcaseUpBound = 122;
+    $lowcaseLowBound = 97;
+    $halfwidthLowbound = 32;//注意：數字在這個區間
+    $halfwidthUpBound = 64;
+    $halfwidthOthers = [91,92,93,94,95,96,123,124,125,126];
+
+
     echo "空白鍵以'_'，顯示：<br />";
+    echo '<table class="indexTable alignCenter">
+            <thead>
+              <tr>
+                <td>&nbsp;流水號&nbsp;</td>
+                <td>&nbsp;ASCII CODE&nbsp;</td>
+                <td>&nbsp;判別形態&nbsp;</td>
+              </tr>
+            </thead>';
     for($i=0;$i<count($inputArr);$i++)
     {
-        $regex = preg_match($regexStr, $inputArr[$i]);
 
+        $regex = preg_match($regexStr, $inputArr[$i]);
+        $inputASCII = ord($inputArr[$i]);
         if($regex)
         {
-          if($inputArr[$i] == " ")
+          //對應的 ASCII code ，且標註是英文大寫 or 英文小寫 or 半形符號 or 其他字元(分辨不出是前三類的就是其他字元)
+          if($inputASCII >= $lowcaseLowBound && $inputASCII <= $lowcaseUpBound)
           {
-            echo '&nbsp;_'.'其ASCII CODE為：'.ord($inputArr[$i])."<br />" ;
+            $result = '英文小寫';
+          }
+          elseif($inputASCII >= $uppercaseLowBound && $inputASCII <= $uppercaseUpBound)
+          {
+            $result = '英文大寫';
+          }
+          elseif(($inputASCII >= $halfwidthLowbound && $inputASCII <= $halfwidthUpBound)  || isset($inputASCII,$halfwidthOthers))
+          {
+            $result = '半形符號';
           }
           else
           {
-            echo '&nbsp;'.$inputArr[$i].'其ASCII CODE為：'.ord($inputArr[$i])."<br />" ;
+            $result = '其他字元';
           }
+          //output
+          echo '<tr>';
+          echo ($inputArr[$i] == " ")
+          ? '<td>'.$inputArr[$i].'</td><td>'.$inputASCII.'</td><td>'.$result.'</td>'
+          : '<td>'.$inputArr[$i].'</td><td>'.$inputASCII.'</td><td>'.$result.'</td>' ;
+          echo '</tr>';
         }
     }
+    echo '</table>';
 }
 ?>
 
