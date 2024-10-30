@@ -79,10 +79,20 @@
         }
         $getstr = $_GET['47input'];
         $getstr = trim($getstr);
+        $getstr = trim($getstr,',');
+        $getstr = trim($getstr,'~');
 
         //字串處理，以逗號判斷，切開字串存入array
         $inputArr=explode(",",$getstr);
 
+        for ($i=0;$i<count($inputArr);$i++)
+        {
+            if($inputArr[$i] > 9)
+            {
+                echo "<span class='redFont'>輸入的值有超過9，請檢查</span>";
+                exit;
+            }
+        }
         //處理碰到符號 " ~ "時，補回所需的字串
         for ($i=0;$i<count($inputArr);$i++)
         {
@@ -96,6 +106,12 @@
             else
             {
                 $temp2Arr = explode('~',$inputArr[$i]);
+                
+                if($temp2Arr[1] == "" || $temp2Arr[0] =="")
+                {
+                    echo "<span class='redFont'>輸入~時，前後的參數可能有漏寫</span>";
+                    exit;
+                }
                 if($temp2Arr[1] > $temp2Arr[0])
                 {
                     $counter = $temp2Arr[1] - $temp2Arr[0];
@@ -112,9 +128,11 @@
                 }
             }
         } 
-        
+
         //將處理完的字串做sort後，儲存字串處理結果
+        array_unique($tempArr);
         sort($tempArr);
+        print_r($tempArr);
         $inputNumArr = $tempArr;
         //$inputNumArr = [1,2,3,4,5,6,7,8,9];
         
@@ -125,10 +143,12 @@
                         <th class='indexThead' colspan='3'>九九乘法 output</th>  
                 </thead>
                 <tbody>";
+        $counter = 0;
         for ($i=1;$i<=$Arr_count;$i++)
         {
-            $quo = $i / 3;//quotient商數，quo簡寫
-            $rem = $i % 3;//remainder餘數，rem採簡寫        
+            $counter++;
+            $quo = $counter / 3;//quotient商數，quo簡寫
+            $rem = $counter % 3;//remainder餘數，rem採簡寫        
             
             if($rem == 1)
             {

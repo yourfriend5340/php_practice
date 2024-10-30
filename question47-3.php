@@ -83,6 +83,15 @@
         //字串處理，以逗號判斷，切開字串存入array
         $inputArr=explode(",",$getstr);
 
+        for ($i=0;$i<count($inputArr);$i++)
+        {
+            if($inputArr[$i] > 9)
+            {
+                echo "<span class='redFont'>輸入的值有超過9，請檢查</span>";
+                exit;
+            }
+        }
+
         //處理碰到符號 " ~ "時，補回所需的字串
         for ($i=0;$i<count($inputArr);$i++)
         {
@@ -96,6 +105,11 @@
             else
             {
                 $temp2Arr = explode('~',$inputArr[$i]);
+                if($temp2Arr[1] == "" || $temp2Arr[0] =="")
+                {
+                    echo "<span class='redFont'>輸入~時，前後的參數可能有漏寫</span>";
+                    exit;
+                }
                 if($temp2Arr[1] > $temp2Arr[0])
                 {
                     $counter = $temp2Arr[1] - $temp2Arr[0];
@@ -114,7 +128,10 @@
         } 
         
         //將處理完的字串做sort後，儲存字串處理結果
+        array_unique($tempArr);
         sort($tempArr);
+        print_r($tempArr);
+        
         $inputNumArr = $tempArr;
         //$inputNumArr = [1,2,3,4,5,6,7,8,9];
         
@@ -140,7 +157,7 @@
             for($j=1;$j<=9;$j++)
             {
                 $outputHtml = (($getchk ===1)
-                    ? "<input type=number id='".$inputNumArr[$i-1].$j."'class='inputNumber47-3' min='0'/>"
+                    ? "<input type=number id='".$inputNumArr[$i-1].$j."'class='inputNumber47-3' min='0'/><td><span class='redFont' id='s".$inputNumArr[$i-1].$j."'></span></td>"
                     : $inputNumArr[$i-1] * $j);
 
                 echo "<tr>
@@ -152,19 +169,22 @@
             echo "</tbody></table></td>";
 
             //在最後一次$i迴圈時，計算空白處要補多少td
-            if($i==$Arr_count){
-                //例如，有16個數字，%3之後可得1。3-1=2，知道要補2個td，但整除不補td
-                if (($Arr_count % 3) != 0)
-                {
-                    $needtd = 3 -($Arr_count % 3);
-                }
-                else
-                {
-                    $needtd = 0;
-                }
-                for($z=1;$z<=$needtd;$z++)
-                {
-                    echo "<td></td>";
+            if($Arr_count >2)
+            {
+                if($i==$Arr_count){
+                    //例如，有16個數字，%3之後可得1。3-1=2，知道要補2個td，但整除不補td
+                    if (($Arr_count % 3) != 0)
+                    {
+                        $needtd = 3 -($Arr_count % 3);
+                    }
+                    else
+                    {
+                        $needtd = 0;
+                    }
+                    for($z=1;$z<=$needtd;$z++)
+                    {
+                        echo "<td></td>";
+                    }
                 }
             }
             if($rem == 0)

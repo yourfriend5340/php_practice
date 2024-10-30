@@ -54,16 +54,17 @@
         $inputNumArr = [1,2,3,4,5,6,7,8,9];
         
         $Arr_count = count($inputNumArr);
-
+        $counter = 0;
         echo "<table class='question47-1SubTable'>
                 <thead>
                         <th class='indexThead' colspan='3'>九九乘法 output</th>  
                 </thead>
                 <tbody>";
-        for ($i=9;$i>=1;$i--)
+        for ($i=$Arr_count;$i>=1;$i--)
         {
-            $quo = $i / 3;//quotient商數，quo簡寫
-            $rem = $i % 3;//remainder餘數，rem採簡寫        
+            $counter++;
+            $quo = $counter / 3;//quotient商數，quo簡寫
+            $rem = $counter % 3;//remainder餘數，rem採簡寫        
             
             if($rem == 1)
             {
