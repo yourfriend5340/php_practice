@@ -23,10 +23,10 @@
                         </tr>
                     </tbody>
                 </table>
-                </form>";
+                </form>
+            </body>
+            </html>";
 ?>
 
-</body>
-</html>
 
 
