@@ -3,10 +3,10 @@
 <head>
 <!--    <script src="js/question29.js?20240923" defer></script>-->
     <?php include "head.php"?>
-    <title>支票簿大小寫轉換器</title>
+    <title>浮點數計算</title>
 </head>
 <body>
-    <span>支票簿大小寫轉換器</span>
+    <span>浮點數計算</span>
     <hr>
     <form class="form1" action="question69-1.php" method="GET">
     <table class="question29Input">
