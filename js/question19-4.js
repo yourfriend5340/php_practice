@@ -45,22 +45,26 @@ $(function () {
     var lowercaseLowBound = 97//小寫a
     var lowercaseUpBound = 122;//小寫z
 
-    lastText = textVal.slice(-1);
-    //alert(lastText);
-    var check = new RegExp('^[A-Z]+$')
-    if (!check.test(lastText))
-    {
-        var newText = textVal.slice(0,-1);//除了最後一個字的字串
-        var check2 = new RegExp('^[a-z]+$')
-      if (check2.test(lastText)) {
-        $('.textAreaInput').val(newText + lastText.toUpperCase());
-      }
-      else
-      {
-        $('.textAreaInput').val(newText);
-      }
-    }
-
+    // lastText = textVal.slice(-1);
+    // //alert(lastText);
+    // var check = new RegExp('^[A-Z]+$')
+    // if (!check.test(lastText))
+    // {
+    //     var newText = textVal.slice(0,-1);//除了最後一個字的字串
+    //     var check2 = new RegExp('^[a-z]+$')
+    //   if (check2.test(lastText)) {
+    //     $('.textAreaInput').val(newText + lastText.toUpperCase());
+    //   }
+    //   else
+    //   {
+    //     $('.textAreaInput').val(newText);
+    //   }
+    //
+    // }
+    //var check2 = new RegExp('^[a-z]+$')
+    //if (check2.test(textVal)) {
+      $('.textAreaInput').val(textVal.toUpperCase());
+    //}
   })
 })
 
