@@ -55,7 +55,8 @@
         <tbody>
             <tr>
                 <td>請輸入想顯示的數字：
-                    <input type="text" name="47input" id="47input"  placeholder="ex：1,2,3,4~7">
+                    <input type="text" name="47input" id="47input"  placeholder="ex：1,2,3,4~7" 
+                    value='<?php if(isset($_GET['47input'])){ echo htmlspecialchars($_GET['47input']);}?>' />
                     <input id='submitBtn' type="submit" value="輸入">
 <!--                    <input type="checkbox" id="47check" name="47check" value="1">-->
 <!--                    <label for="47check">是否製作練習題</label>-->
@@ -85,14 +86,7 @@
         //字串處理，以逗號判斷，切開字串存入array
         $inputArr=explode(",",$getstr);
 
-        for ($i=0;$i<count($inputArr);$i++)
-        {
-            if($inputArr[$i] > 9)
-            {
-                echo "<span class='redFont'>輸入的值有超過9，請檢查</span>";
-                exit;
-            }
-        }
+
         //處理碰到符號 " ~ "時，補回所需的字串
         for ($i=0;$i<count($inputArr);$i++)
         {
@@ -128,12 +122,21 @@
                 }
             }
         } 
-
+        for ($i=0;$i<count($inputArr);$i++)
+        {
+            if($inputArr[$i] > 9)
+            {
+                echo "<span class='redFont'>輸入的值有超過9，請檢查</span>";
+                exit;
+            }
+        }
         //將處理完的字串做sort後，儲存字串處理結果
-        array_unique($tempArr);
-        sort($tempArr);
+        
+        $uniqueTempArr = array_unique($tempArr);
+        
+        sort($uniqueTempArr);
         //print_r($tempArr);
-        $inputNumArr = $tempArr;
+        $inputNumArr = $uniqueTempArr;
         //$inputNumArr = [1,2,3,4,5,6,7,8,9];
         
         $Arr_count = count($inputNumArr);

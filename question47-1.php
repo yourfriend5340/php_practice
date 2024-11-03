@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="js/question47.js?20240923" defer></script>
+    <!-- <script src="js/question47.js?20240923" defer></script> -->
     <?php include "head.php"?>
     <title>九九乘法表</title>
 </head>
@@ -71,7 +71,7 @@
                 echo "<tr>";
             }
 
-            echo "<td><table class='question47-1Sub2Table'><tdoby>";
+            echo "<td><table class='question47-1Sub2Table'><tbody>";
 
             for($j=9;$j>=1;$j--)
             {
@@ -107,7 +107,7 @@
             }
         }
 
-        echo "</tdoby></table>";
+        echo "</tbody></table>";
 ?>
 
 </body>
