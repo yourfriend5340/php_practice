@@ -12,7 +12,7 @@
     請輸入數字：
     <br />
     <form method='GET' action='question96-2.php'>
-    <input class='input' name='textAreaInput' value='<?php if(isset($_GET['textAreaInput'])){echo $_GET['textAreaInput'];}?>' />
+    <input class='input' name='textAreaInput' value='<?php if(isset($_GET['textAreaInput'])){echo htmlspecialchars($_GET['textAreaInput'],ENT_QUOTES);}?>' />
     <input type="submit" value="送出">
     </form>
     <br />

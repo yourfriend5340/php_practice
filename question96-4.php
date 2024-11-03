@@ -11,7 +11,7 @@
     <br />
     請輸入數字：
     <br />
-    <input class='input' name='textAreaInput' value='<?php if(isset($_GET['textAreaInput'])){echo $_GET['textAreaInput'];}?>' />
+    <input class='input' name='textAreaInput' value='<?php if(isset($_GET['textAreaInput'])){echo htmlspecialchars($_GET['textAreaInput'],ENT_QUOTES);}?>' />
     <br />
     <span id='popup'></span><br />
     <span id='popup2'></span><br />
