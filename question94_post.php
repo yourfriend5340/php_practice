@@ -7,8 +7,29 @@ if(isset($_POST['submit']))
 
     if ($file1Route == '' || $file2Route == '')
     {
-        echo '請務必確實選擇兩個檔案';
+        echo '請務必確實選擇兩個檔案'.
+        "<button onclick=document.location='./question94.php'>回上頁</button>";
         exit;
+    }
+
+    if(pathinfo($_FILES['94input1']['name'],PATHINFO_EXTENSION) !== 'txt' 
+        || pathinfo($_FILES['94input2']['name'],PATHINFO_EXTENSION) !== 'txt')
+    {
+        echo '兩個檔案，請務必選擇txt檔'.
+        "<button onclick=document.location='./question94.php'>回上頁</button>";
+        exit;
+    }
+    if(mime_content_type($file1Route) !== 'text/plain' 
+        || mime_content_type($file2Route) !== 'text/plain')
+    {
+        echo '檢查到有非文字檔案，兩個檔案請務必選擇txt檔'.
+        "<button onclick=document.location='./question94.php'>回上頁</button>";
+        exit;
+    }
+
+    if(!file_exists("./temp"))
+    {
+        mkdir('./temp',0777);
     }
 
     //file是實際存放在你硬碟中要被下載的檔案，可使用變數。
@@ -33,6 +54,6 @@ if(isset($_POST['submit']))
     header("Content-Disposition: attachment; filename=merge.txt");
     //file_name是預設下載時的檔名，可使用變數。
     readfile($mergeFileRoute);
-    unlink($mergeFileRoute);//將檔案刪除
-    exit;
+    unlink($mergeFileRoute);//暫存檔案刪除
+    
 }
