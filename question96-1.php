@@ -18,26 +18,24 @@
     <br />
 
 <?php
+    function DectoBin($decimal)
+    {
+        bcscale(0);
+        $binary = '';
+        $count1 = 0;
+        do
+        {
+            $binary = bcmod($decimal,'2') . $binary;
+            $decimal = bcdiv($decimal,'2');
+
+        } while (bccomp($decimal,'0'));
+
+        return($binary);
+    }
+
     if(isset($_GET["textAreaInput"]))
     {
-
-        function DectoBin($decimal)
-        {
-            bcscale(0);
-            $binary = '';
-            
-            do
-            {
-                $binary = bcmod($decimal,'2') . $binary;
-                $decimal = bcdiv($decimal,'2');
-            } while (bccomp($decimal,'0'));
-
-            return($binary);
-        }
-
-
         $input = $_GET["textAreaInput"];        
-        $result = DectoBin($input);
 
         $regrex = preg_match("/^(1\d{2}|2[0-4]\d|25[0-6]|[1-9]\d|\d)$/",$input);
         if(!$regrex)
@@ -46,7 +44,10 @@
         }
         else
         {
+            $result = DectoBin($input);
             echo "<span id='pupup2'>計算出來的結果是：".$result."</span><br />";
+            echo "<span id='pupup3'>1的個數有：".substr_count($result,1)." 個</span><br />";
+            echo "<span id='pupup4'>0的個數有：".substr_count($result,0)." 個</span><br />";
         }
     }
 ?>

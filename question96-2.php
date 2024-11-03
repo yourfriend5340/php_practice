@@ -7,7 +7,7 @@
 </head>
 <body>
     <span>輸入1~256的數字判斷階層</span><br />
-    <span>版本一: 用php除以2的遞迴計算階層跟餘數</span><br />
+    <span>版本二: 用php把十進位轉二進位，再切字串計算</span><br />
     <br />
     請輸入數字：
     <br />

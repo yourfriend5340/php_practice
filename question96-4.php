@@ -7,12 +7,14 @@
 </head>
 <body>
     <span>輸入1~256的數字判斷階層</span><br />
-    <span>版本一: 用php除以2的遞迴計算階層跟餘數</span><br />
+    <span>版本四: 用 JS 寫，用 toString(2) 把 10 進位轉 2 進位，再切割字串計算</span><br />
     <br />
     請輸入數字：
     <br />
     <input class='input' name='textAreaInput' value='<?php if(isset($_GET['textAreaInput'])){echo $_GET['textAreaInput'];}?>' />
     <br />
-    <span id='popup'></span>
+    <span id='popup'></span><br />
+    <span id='popup2'></span><br />
+    <span id='popup3'></span><br />
 </body>
 </html>

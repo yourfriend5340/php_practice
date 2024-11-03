@@ -11,7 +11,7 @@
     <br />
     請輸入文字：(空值不予回應，輸入後請移開滑鼠並點一下左鍵)
     <br />
-    <textarea row='3' col='3' class='textAreaInput' name='textAreaInput'></textarea>
+    <textarea class='textAreaInput' name='textAreaInput'></textarea>
     <span id='popup'></span><br />
     <span id='popup2'></span><br />
 </html>
