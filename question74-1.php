@@ -22,11 +22,13 @@
     {
         $input = trim($_GET["textAreaInput"]);
         $changeLine = substr_count($input,"\r\n");
+        $total = mb_strlen($input) - (2 *$changeLine);
+
         echo $input.'<br />';
         echo "<span id=''pupup>有找到換行，共有：".$changeLine." 個(不計算在長度內)</span><br />";
         echo "<span id='pupup0'>有找到空白字元，共有：".substr_count($input,' ')." 個</span><br />";
-        echo "<span id='pupup'>計算出來的結果是：".strlen($input)-($changeLine * 4)." 個字元長度</span><br />";
-        echo "<span id='pupup2'>計算出來的結果是：".mb_strlen($input)." 個字串長度</span><br />";
+        //echo "<span id='pupup'>計算出來的結果是：".strlen($input)-($changeLine * 4)." 個字元長度</span><br />";
+        echo "<span id='pupup2'>計算出來的結果是：".$total." 個字串長度</span><br />";
     }
 ?>
 

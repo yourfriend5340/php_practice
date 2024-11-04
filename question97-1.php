@@ -20,7 +20,9 @@
     {
         $input = trim($_GET["textAreaInput"]);
         $replaceWord = str_replace( ' ','',$input);
-        $wordArea = "<textarea class='textAreaInput' name='textAreaInput' placeholder='請輸入文字'>".htmlspecialchars($replaceWord)."</textarea>";
+        $replaceWord = str_replace("\r\n",'',$replaceWord);
+        $replaceWord = htmlspecialchars($replaceWord,ENT_QUOTES);
+        $wordArea = "<textarea class='textAreaInput' name='textAreaInput' placeholder='請輸入文字'>".$replaceWord."</textarea>";
     }
     else
     {

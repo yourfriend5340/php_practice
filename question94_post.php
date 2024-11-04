@@ -40,7 +40,7 @@ if(isset($_POST['submit']))
     {
         fwrite($openMerge, $file1[$i]);
     }
-    fwrite($openMerge, "\n");
+    fwrite($openMerge, "\n");//為了讓第二個檔，換行後再寫
 
     $file2 = file($file2Route);
     $file2LineCount = count($file2);

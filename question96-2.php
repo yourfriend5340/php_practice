@@ -32,7 +32,7 @@
         {
             echo "<span id='pupup2'>計算出來的結果是：".$inputToBin."</span><br />";
             echo "<span id='popup3'> 1 的個數有：".substr_count($inputToBin,1)." 個</span><br />";
-            echo "<span id='popup3'> 0 的個數有：".substr_count($inputToBin,0)." 個</span><br />";
+            echo "<span id='popup4'> 0 的個數有：".substr_count($inputToBin,0)." 個</span><br />";
         }
     }
 ?>
