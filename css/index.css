@@ -233,7 +233,9 @@ a:hover {}
     justify-content: center;
     align-content: center;
 }
-
+.fontBigSize{
+  font-size: 20px;
+}
 .clearfix::after {
     content: '';
     display: block;
